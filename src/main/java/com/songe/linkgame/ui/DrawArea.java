@@ -166,7 +166,6 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         MenuFrame.open();
     }
     public void showPathAndBomb(boolean isBomb, int i1, int j1, int i2, int j2) {
-        System.out.println("执行了吗");
         new RePaintThread(isBomb, i1, j1, i2, j2).start();
     }
 

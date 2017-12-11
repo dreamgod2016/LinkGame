@@ -35,8 +35,6 @@ public class Checker {
     }
 
 
-
-
     public static int[][] newGame()
     {
         do {
@@ -59,7 +57,7 @@ public class Checker {
                 initial[rand] = initial[lastIndex];
             }
             for (int i = 0; i < len; i++) {
-                int y = i % height + 1;
+                int y = i % width + 1;
                 int x = i / width + 1;
                 arr[x][y] = random[i];
                 //把随机的结果赋给arr。
