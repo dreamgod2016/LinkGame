@@ -26,7 +26,7 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
     private int firstY = 50;
     private int space = 80;
     private DrawArea area;
-
+    private TimePanel time;
     public ControlPanel()
     {
         //空的构造函数
@@ -34,11 +34,11 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
         addMouseListener(this);
         addMouseMotionListener(this);
     }
-    public ControlPanel(DrawArea area)
+    public ControlPanel(DrawArea area, TimePanel time)
     {
         this();
         this.area = area;
-
+        this.time = time;
     }
 
     @Override
@@ -103,8 +103,8 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
             case 4:
                 tip = ImagesFactory.getImage(44);
                 if (SharedVars.draw_able) {
-                    if (SharedVars.effct_music)
-                        EffectSound.getAudio(EffectSound.TIP).play();
+//                    if (SharedVars.effct_music)
+//                        EffectSound.getAudio(EffectSound.TIP).play();
                     showTip();
                 }
                 break;
@@ -180,6 +180,17 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
         area.setNodes(refreshChecker.reset());
         if (SharedVars.score > 0)
             SharedVars.score -= 5;
+        area.repaint();
+    }
+
+    private void restart() {
+        area.setNodes(DrawHelper.getNodes());
+        TimePanel.initTime();
+        SharedVars.score = 0;
+        isRun = true;
+        initImage();
+//        if (SharedVars.effct_music)
+//            EffectSound.getAudio(EffectSound.RESTART).play();
         area.repaint();
     }
 

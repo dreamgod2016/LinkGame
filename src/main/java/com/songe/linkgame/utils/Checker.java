@@ -2,18 +2,20 @@ package com.songe.linkgame.utils;
 
 import java.util.LinkedList;
 
+import com.songe.linkgame.shared.SharedVars;
+import com.songe.linkgame.shared.SharedVars.*;
+
 public class Checker {
 
     private static int[][] arr;
     //path
-    public  static int turnCount;
     private static int width;
     private static int height;
     private static int numOfShape;
     private static Mode md;
 
     private static int[] path = new int[8];
-    private static int[] tip;
+    private static int[] tip = new int[4];
     //步骤较少，这里就用一维数组表示路径了
 
 
@@ -24,7 +26,8 @@ public class Checker {
     //把这个问题分解成几个小问题
     public Checker(int width, int height, int numOfShape, Mode md)
     {
-        arr = new int[width+2][height+2];
+        //这里有个大坑。
+        arr = new int[height+2][width+2];
         this.width = width;
         this.height = height;
         this.numOfShape = numOfShape;
@@ -42,10 +45,11 @@ public class Checker {
             int len = height*width;
             int[] initial = new int[len];
             int[] random = new int[len];
-            for (int i=0; i<len ; i++)
+            for (int i=0; i<len ; i +=2)
             {
                 //初始化
-                initial[i] = initial[i+1] = (int)(Math.random()*numOfShape)+1;
+                initial[i] =(int)(Math.random()*numOfShape)+1;
+                initial[i+1] = initial[i];
             }
             //接下来打乱。
             for (int index = 0, lastIndex = len-1; index<len && lastIndex>0; index++,lastIndex--)
@@ -55,7 +59,7 @@ public class Checker {
                 initial[rand] = initial[lastIndex];
             }
             for (int i = 0; i < len; i++) {
-                int y = i % width + 1;
+                int y = i % height + 1;
                 int x = i / width + 1;
                 arr[x][y] = random[i];
                 //把随机的结果赋给arr。
@@ -195,7 +199,7 @@ public class Checker {
         if (arr[x1][y1] == arr[x2][y2] && hasWay(x1, y1, x2, y2))
         {
             //判断是同一个形状，而且中间有直接到达的路线。
-            turnCount = 0;
+            SharedVars.turnCount = 0;
             path[0] = x1;
             path[1] = y1;
             path[2] = x2;
@@ -214,7 +218,7 @@ public class Checker {
         {
             if (hasWay(x1,y1,x1,y2) && hasWay(x1,y2,x2,y2))
             {
-                turnCount = 1;
+                SharedVars.turnCount = 1;
                 path[0] = x1;
                 path[1] = y1;
                 path[2] = x1;
@@ -228,7 +232,7 @@ public class Checker {
         {
             if (hasWay(x1,y1,x2,y1) && hasWay(x2,y1,x2,y2))
             {
-                turnCount = 1;
+                SharedVars.turnCount = 1;
                 path[0] = x1;
                 path[1] = y1;
                 path[2] = x2;
@@ -253,7 +257,7 @@ public class Checker {
             {
                 if (hasWay(x1,y1,middle,y1) && hasWay(middle,y1,middle,y2)&& hasWay(middle,y2,x2,y2))
                 {
-                    turnCount = 2;
+                    SharedVars.turnCount = 2;
                     path[0] = x1;
                     path[1] = y1;
                     path[2] = middle;
@@ -271,7 +275,7 @@ public class Checker {
                 //判断两个节点
                 if (hasWay(x1,y1,x1,middle) && hasWay(x1,middle,x2,middle)&& hasWay(x2,middle,x2,y2))
                 {
-                    turnCount = 2;
+                    SharedVars.turnCount = 2;
                     path[0] = x1;
                     path[1] = y1;
                     path[2] = x1;

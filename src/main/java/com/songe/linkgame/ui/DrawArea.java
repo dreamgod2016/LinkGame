@@ -1,6 +1,7 @@
 package com.songe.linkgame.ui;
 
 import com.songe.linkgame.frame.MenuFrame;
+import com.songe.linkgame.frame.SingleGameFrame;
 import com.songe.linkgame.shared.SharedVars;
 import com.songe.linkgame.utils.Checker;
 import com.songe.linkgame.utils.DrawHelper;
@@ -11,9 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import static com.songe.linkgame.shared.SharedVars.BOMB_BEGIN_IMAGE;
-import static com.songe.linkgame.shared.SharedVars.BOMB_END_IMAGE;
-import static com.songe.linkgame.shared.SharedVars.time;
+import static com.songe.linkgame.shared.SharedVars.*;
 
 public class DrawArea extends JPanel implements MouseMotionListener,MouseListener{
 
@@ -55,7 +54,21 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         }
     }
 
+    public TimePanel getTime() {
+        return time;
+    }
+    public void setTime(TimePanel time)
+    {
+        this.time = time;
+    }
 
+    public boolean isShowPath() {
+        return isShowPath;
+    }
+
+    public void setShowPath(boolean showPath) {
+        isShowPath = showPath;
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -89,6 +102,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
             int i1 = DrawHelper.getI(e.getY());
             int j1 = DrawHelper.getJ(e.getX());
             int i2 = 0, j2 = 0;
+            Checker newChecker = new Checker(nodes);
             if (lastPos!=null)
             {
                 i2 = DrawHelper.getI((int) lastPos.getY());
@@ -99,15 +113,27 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
             {
                 //点到方块了
                 currentPos.setLocation(e.getX(), e.getY());
-                if(i1!=i2 || j1!= j2)
+                if((i1!=i2 || j1!= j2) && newChecker.removable(i1,j1,i2,j2))
                 {
                     //这里需要判断一下是否可以消除，如果可以消除的话
+                    paths = Checker.getPath();
+                    for (int i = 0; i < paths.length; i++) {
+                        System.out.print(paths[i] + "<>");
+                    }
+                    System.out.println();
+                    if (SharedVars.time < 490)
+                        SharedVars.time += 10;
+                    SharedVars.score += 5;
+                    isShowPath = true;
+                    nodes[i1][j1] = 0;
+                    nodes[i2][j2] = 0;
+                    lastPos.setLocation(0, 0);
+                    currentPos.setLocation(0, 0);
 
+                    showPathAndBomb(true, i1, j1, i2, j2);
                 }
             }
-
-
-
+            repaint();
         }
 
     }
@@ -122,6 +148,10 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         repaint();
     }
 
+
+    public void clearPath() {
+        new RePaintThread().start();
+    }
     public static void back() {
         SharedVars.draw_able = true;
         TimePanel.initTime();
@@ -135,7 +165,10 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         }
         MenuFrame.open();
     }
-
+    public void showPathAndBomb(boolean isBomb, int i1, int j1, int i2, int j2) {
+        System.out.println("执行了吗");
+        new RePaintThread(isBomb, i1, j1, i2, j2).start();
+    }
 
 
     @Override
@@ -182,6 +215,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         private int i2;
         private int j1;
         private int j2;
+        public RePaintThread(){}
         public RePaintThread(boolean isBomb, int i1, int j1, int i2, int j2) {
             this.isBomb = isBomb;
             this.i1 = i1;
@@ -262,5 +296,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         }
 
     }
+
+
 
 }

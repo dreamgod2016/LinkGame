@@ -22,12 +22,13 @@ public class ImagesFactory {
 //            ClassLoader classloader =
             ImageIcon icon = null;
             try {
-
-                icon = new ImageIcon(ImagesFactory.class.getResource("images/" + index + ".jpg"));
+                System.out.println(ImagesFactory.class.getResource("/images/" + index + ".png"));
+                icon = new ImageIcon(ImagesFactory.class.getResource("/images/" + index + ".png"));
             }
             catch (NullPointerException e )
             {
                 e.printStackTrace();
+                System.out.println(index);
                 JOptionPane.showMessageDialog(null,"Miss something!\n");
                 return null;
             }

@@ -1,11 +1,16 @@
 package com.songe.linkgame.shared;
 
+//import com.songe.linkgame.ui.DrawArea;
+import com.songe.linkgame.ui.*;
+
+
 public class SharedVars {
     //一些公用的变量。
     public static int time = 500;
     public static int sleep_time = 500;
 
     public static int score = 0;
+    public static int turnCount = 0;
 
     public static final int GAME_EASY = 20;
     public static final int GAME_GENERAL = 21;
@@ -35,9 +40,13 @@ public class SharedVars {
     public static final int IMAGES_SUM = 20;
 
     public static final int BACKGROUND_NUM = 67;
+    public static final int MENU_BACKGROUND_NUM = 67;
     public static final int SMALL_BACKGROUND_NUM = 66;
 
     public static final int START_IMAGE_RUN = 43;
+    public static final int MENU_START_BUTTON_RUN = 53;
+    public static final int MENU_MODE_BUTTON_RUN = 54;
+    public static final int MENU_SORT_IMAGE_RUN = 55;
 //    public static final int START_IMAGE_RUN = 43;
 
     public static final int START_IMAGE = 41;
@@ -58,7 +67,7 @@ public class SharedVars {
 
 
 
-
-
+    public static TimePanel timePanel = new TimePanel();
+    public static DrawArea area = new DrawArea();
 
 }

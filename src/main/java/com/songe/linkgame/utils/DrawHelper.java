@@ -54,8 +54,8 @@ public class DrawHelper {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.red);
         g2d.setStroke(new BasicStroke(5));
-        for (int i = 1; i <= nums[0] * 2 - 2; i += 2) {
-            g2d.drawLine(getCenterX(nums[i + 1]), getCenterY(nums[i]), getCenterX(nums[i + 3]),
+        for (int i = 0; i <= SharedVars.turnCount * 2; i += 2) {
+            g2d.drawLine(getCenterX(nums[i+1]), getCenterY(nums[i]), getCenterX(nums[i + 3]),
                     getCenterY(nums[i + 2]));
         }
     }

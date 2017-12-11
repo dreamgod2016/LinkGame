@@ -7,13 +7,17 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 
+import com.songe.linkgame.frame.MenuFrame;
+import com.songe.linkgame.frame.SingleGameFrame;
+import com.songe.linkgame.shared.SharedVars;
 import com.songe.linkgame.utils.*;
+
+import static com.songe.linkgame.shared.SharedVars.*;
 
 public class MenuPanel extends JPanel implements MouseListener,MouseMotionListener{
 
     private Image start;
     private Image about;
-    private int backGroundNum = 0;
     //接下来是很魔幻的定位。
     private int firstX = 260;
     private int firstY = 200;
@@ -36,7 +40,7 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
     {
         //初始化各个按钮的图片
         //图片的序号再说吧233
-        start = ImagesFactory.getImage(66);
+        start = ImagesFactory.getImage(MENU_START_BUTTON_RUN);
 
     }
 
@@ -56,6 +60,14 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
                 //点击了开始
                 //关闭MenuFrame
                 //检查游戏模式，准备开始游戏
+                MenuFrame.close();
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                SingleGameFrame.open();
+                TimePanel.initTime();
                 break;
         }
 
@@ -96,7 +108,7 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
     private void drawMenu(Graphics g)
     {
         //下面这个是背景
-        g.drawImage(ImagesFactory.getImage(backGroundNum), 0, 0, 750, 500, null);
+        g.drawImage(ImagesFactory.getImage(MENU_BACKGROUND_NUM), 0, 0, 750, 500, null);
         g.drawImage(start, firstX, firstY, item_width, item_height, null);
         //接下来要画多少hh
     }

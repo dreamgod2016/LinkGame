@@ -13,7 +13,7 @@ public class ShowHelper {
         if (frameSize.width > screenSize.width)
             frameSize.width = screenSize.width;
         //设置中央的位置。
-        window.setLocation((screenSize.width-frameSize.width)/2,(screenSize.height - frameSize.width)/2);
+        window.setLocation((screenSize.width-frameSize.width)/2,(screenSize.height - frameSize.height)/2);
 
     }
 }
