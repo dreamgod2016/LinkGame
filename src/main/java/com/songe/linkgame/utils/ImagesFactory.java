@@ -22,7 +22,7 @@ public class ImagesFactory {
 //            ClassLoader classloader =
             ImageIcon icon = null;
             try {
-                System.out.println(ImagesFactory.class.getResource("/images/" + index + ".png"));
+//                System.out.println(ImagesFactory.class.getResource("/images/" + index + ".png"));
                 icon = new ImageIcon(ImagesFactory.class.getResource("/images/" + index + ".png"));
             }
             catch (NullPointerException e )

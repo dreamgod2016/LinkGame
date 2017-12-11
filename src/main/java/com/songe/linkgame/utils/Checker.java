@@ -50,7 +50,7 @@ public class Checker {
                 initial[i+1] = initial[i];
             }
             //接下来打乱。
-            for (int index = 0, lastIndex = len-1; index<len && lastIndex>0; index++,lastIndex--)
+            for (int index = 0, lastIndex = len-1; index<len && lastIndex>=0; index++,lastIndex--)
             {
                 int rand = (int) (Math.random() * (lastIndex + 1));
                 random[index] = initial[rand];
@@ -248,8 +248,27 @@ public class Checker {
     {
         //转两个弯
         //这里其实也可以调用turnOnce来处理。
-        for (int middle = 0; middle < arr.length; middle++)
+        for (int middle = 0; middle < arr[0].length; ++middle)
         {
+            if (arr[x1][middle] == 0 && arr[x2][middle] == 0)
+            {
+                //判断两个节点
+                if (hasWay(x1,y1,x1,middle) && hasWay(x1,middle,x2,middle)&& hasWay(x2,middle,x2,y2))
+                {
+                    SharedVars.turnCount = 2;
+                    path[0] = x1;
+                    path[1] = y1;
+                    path[2] = x1;
+                    path[3] = middle;
+                    path[4] = x2;
+                    path[5] = middle;
+                    path[6] = x2;
+                    path[7] = y2;
+                    return true;
+                }
+            }
+            if (middle >= arr.length)
+                continue;
             //从x轴选一个点进行转弯。
             if (arr[middle][y1]==0 && arr[middle][y2]==0)
             {
@@ -268,23 +287,7 @@ public class Checker {
                 }
             }
             //从y轴选一个点
-            if (arr[x1][middle] == 0 && arr[x2][middle] == 0)
-            {
-                //判断两个节点
-                if (hasWay(x1,y1,x1,middle) && hasWay(x1,middle,x2,middle)&& hasWay(x2,middle,x2,y2))
-                {
-                    SharedVars.turnCount = 2;
-                    path[0] = x1;
-                    path[1] = y1;
-                    path[2] = x1;
-                    path[3] = middle;
-                    path[4] = x2;
-                    path[5] = middle;
-                    path[6] = x2;
-                    path[7] = y2;
-                    return true;
-                }
-            }
+
         }
         return false;
     }
