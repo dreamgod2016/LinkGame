@@ -246,7 +246,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                     nodes[i2][j2] = i;
                     repaint();
                     try{
-                        Thread.sleep(40);
+                        Thread.sleep(45);
                     }catch (Exception e)
                     {
                         e.printStackTrace();
@@ -254,6 +254,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                 }
                 nodes[i1][j1] = 0;
                 nodes[i2][j2] = 0;
+                repaint();
             }
             if (isWin) {
                 try {
