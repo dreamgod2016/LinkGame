@@ -111,6 +111,11 @@ public class Checker {
     }
     public static int[] getTip()
     {
+        //测试了一下不是这里的问题。
+//        tip[0]=5;
+//        tip[1]=5;
+//        tip[2]=8;
+//        tip[3]=8;
         return tip;
     }
 
@@ -137,6 +142,7 @@ public class Checker {
                     return true;
                 }
             }
+
         }
         return false;
     }

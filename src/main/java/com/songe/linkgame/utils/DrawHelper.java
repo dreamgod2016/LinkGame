@@ -95,11 +95,11 @@ public class DrawHelper {
         switch (SharedVars.game_stage) {
             case SharedVars.GAME_EASY:
                 Checker easyCheck = new Checker(SharedVars.NODES_COLUMN - 2, SharedVars.NODES_ROW - 2,
-                        SharedVars.TOTAL_IMAGES - 8, Mode.classic);
+                        SharedVars.TOTAL_IMAGES, Mode.classic);
                 return easyCheck.newGame();
             case SharedVars.GAME_GENERAL:
                 Checker generalCheck = new Checker(SharedVars.NODES_COLUMN - 2, SharedVars.NODES_ROW - 2,
-                        SharedVars.TOTAL_IMAGES - 8, Mode.classic);
+                        SharedVars.TOTAL_IMAGES, Mode.classic);
                 return generalCheck.newGame();
             default:
                 break;

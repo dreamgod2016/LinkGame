@@ -78,6 +78,7 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
                 if (isRun)
                 {
                     //暂停时间。
+                    //但是时间好像还没停止
                     isRun = false;
                     SharedVars.draw_able = false;
                     area.repaint();

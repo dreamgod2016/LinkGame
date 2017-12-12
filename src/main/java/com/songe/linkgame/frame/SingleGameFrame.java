@@ -35,7 +35,7 @@ public class SingleGameFrame extends JFrame {
 
     public static void open() {
         frame = new SingleGameFrame();
-        frame.setTitle("欢迎来到秦时明月--连连看");
+        frame.setTitle("松鹅的连连看");
         frame.setSize(980, 570);
         ShowHelper.setCenter(frame);
         frame.setResizable(false);

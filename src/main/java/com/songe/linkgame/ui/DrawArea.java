@@ -19,7 +19,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
 
     private int[][] nodes;
     private int[] paths;
-    private boolean isShowPath;
+    private boolean isShowPath = false;
     private Point currentMovePos = new Point(0, 0);
     private Point lastPos = new Point(0, 0);
     private Point currentPos = new Point(0, 0);
@@ -49,7 +49,12 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
             DrawHelper.drawSelectRect(nodes, currentPos, g);
             DrawHelper.drawMoveRect(nodes, currentMovePos, g);
             if (isShowPath) {
+                for (int i = 0; i < paths.length; i+=2) {
+                    System.out.print("a("+paths[i] + ","+paths[i+1]+") ");
+                }
+                System.out.println();
                 DrawHelper.drawLine(nodes, paths, g);
+                isShowPath = false;
             }
         }
     }
@@ -116,9 +121,9 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                 if((i1!=i2 || j1!= j2) && newChecker.removable(i1,j1,i2,j2))
                 {
                     //这里需要判断一下是否可以消除，如果可以消除的话
-                    paths = Checker.getPath();
-                    for (int i = 0; i < paths.length; i++) {
-                        System.out.print(paths[i] + "<>");
+                    paths = newChecker.getPath();
+                    for (int i = 0; i < paths.length; i+=2) {
+                        System.out.print("("+paths[i] + ","+paths[i+1]+") ");
                     }
                     System.out.println();
                     if (SharedVars.time < 490)
@@ -131,6 +136,8 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                     currentPos.setLocation(0, 0);
 
                     showPathAndBomb(true, i1, j1, i2, j2);
+                    System.out.println("showPath:"+i1+j1+i2+j2);
+
                 }
             }
             repaint();
@@ -166,6 +173,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         MenuFrame.open();
     }
     public void showPathAndBomb(boolean isBomb, int i1, int j1, int i2, int j2) {
+        //这个部分主要是Bomb
         new RePaintThread(isBomb, i1, j1, i2, j2).start();
     }
 
@@ -237,9 +245,9 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                 nodes = new Checker(nodes).reset();
             if (isWin)
                 SharedVars.isPause = true;
-            repaint();
             if (isBomb)
             {
+                //爆炸效果
                 for (int i = BOMB_BEGIN_IMAGE; i<=BOMB_END_IMAGE;i++)
                 {
                     nodes[i1][j1] = i;
