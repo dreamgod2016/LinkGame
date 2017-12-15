@@ -80,6 +80,7 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
                     //暂停时间。
                     //但是时间好像还没停止
                     isRun = false;
+                    time.pause();
                     SharedVars.draw_able = false;
                     area.repaint();
                     start = ImagesFactory.getImage(START_IMAGE);
@@ -87,6 +88,7 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
                 else
                 {
                     isRun = true;
+                    time.begin();
                     SharedVars.draw_able = true;
                     area.repaint();
                     start = ImagesFactory.getImage(START_IMAGE_RUN);
@@ -216,6 +218,5 @@ public class ControlPanel extends JPanel implements MouseListener, MouseMotionLi
         area.setShowPath(true);
         area.clearPath();
         area.repaint();
-
     }
 }

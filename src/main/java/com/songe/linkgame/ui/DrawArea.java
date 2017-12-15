@@ -49,10 +49,10 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
             DrawHelper.drawSelectRect(nodes, currentPos, g);
             DrawHelper.drawMoveRect(nodes, currentMovePos, g);
             if (isShowPath) {
-                for (int i = 0; i < paths.length; i+=2) {
-                    System.out.print("a("+paths[i] + ","+paths[i+1]+") ");
-                }
-                System.out.println();
+//                for (int i = 0; i < paths.length; i+=2) {
+//                    System.out.print("a("+paths[i] + ","+paths[i+1]+") ");
+//                }
+//                System.out.println();
                 DrawHelper.drawLine(nodes, paths, g);
                 isShowPath = false;
             }
