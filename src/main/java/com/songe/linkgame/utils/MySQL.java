@@ -3,6 +3,7 @@ package com.songe.linkgame.utils;
 import java.sql.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class MySQL {
 
@@ -35,9 +36,9 @@ public class MySQL {
         }
     }
 
-    public String[][] getAllItem()
+    public Object[][] getAllItem()
     {
-        String[][] getResult;
+        Object[][] getResult;
         if (!connectDataBase())
         {
             getResult = null;
@@ -159,13 +160,11 @@ public class MySQL {
     //用来测试的函数。
     public static void main(String[] arg0)
     {
-        String[][] result;
+        Object[][] result;
         MySQL getResult = new MySQL();
         getResult.connectDataBase();
         result = getResult.getAllItem();
-        for (int i = 0; i < result.length; i++) {
-            System.out.println(result[i][0]+result[i][1]+result[i][2]+"\n");
-        }
+        System.out.println(Arrays.deepToString(result));
         getResult.closeDataBase();
     }
 

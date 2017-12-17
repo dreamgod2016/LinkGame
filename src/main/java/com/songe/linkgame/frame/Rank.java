@@ -5,6 +5,7 @@ import com.songe.linkgame.utils.MySQL;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
+import java.security.KeyStore;
 
 public class Rank
 {
@@ -40,15 +41,15 @@ public class Rank
 
     public void show() {
         RankDialog rankDialog = new RankDialog();
-        rankDialog.show();
+        rankDialog.showTable();
     }
 
     class RankDialog extends JDialog
     {
 
         private JTable table;
-        private Object[] tittle = {"序号", "得分", "日期"};
-        private String[][] rankList;
+        private Object[] tittle = {"序号", "名字", "得分"};
+        private Object[][] rankList;
         private JLabel titleLabel;
         private JPanel topPanel;
         private JPanel centerPanel;
@@ -61,6 +62,7 @@ public class Rank
             setModal(true);
             setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             setTitle("松鹅的连连看排行榜");
+            
 
             //设置位置。
             Toolkit kit = Toolkit.getDefaultToolkit();
@@ -76,19 +78,25 @@ public class Rank
             titleLabel.setFont(new Font("华文行楷", 0, 32));
             topPanel.add(titleLabel);
 
+            //测试
+//            getRank();
+//            table = new JTable(rankList, tittle);
+//            centerPanel.add(new JScrollPane(table));
+
+
+
             setLayout(new BorderLayout());
             add(topPanel, BorderLayout.NORTH);
             add(centerPanel, BorderLayout.CENTER);
 
-
         }
-
         //这个地方再考虑一下，要不要重写。
-        public void show()
+        public void showTable()
         {
-            getRank();
+            rankList = getRank();//其实这一步赋值无所谓hh
             table = new JTable(rankList, tittle);
             centerPanel.removeAll();
+            centerPanel.add(new JScrollPane(table));
             centerPanel.setLayout(new BorderLayout());
             centerPanel.add(new JScrollPane(table), BorderLayout.CENTER);
             DefaultTableCellRenderer r = new DefaultTableCellRenderer();
@@ -96,13 +104,14 @@ public class Rank
             table.setDefaultRenderer(Object.class, r);
             table.setRowHeight(20);
             table.setFont(new Font("微软雅黑", 0, 14));
-            table.setGridColor(Color.BLUE);
+            table.setGridColor(Color.BLACK);
             table.setSize(centerPanel.getWidth(), centerPanel.getHeight());
-            table.setRowSelectionAllowed(false);
+            table.setEnabled(false);
             setVisible(true);
+
         }
 
-        public String[][] getRank()
+        public Object[][] getRank()
         {
             MySQL getResult = new MySQL();
             getResult.connectDataBase();
@@ -120,6 +129,12 @@ public class Rank
             return isInsert;
         }
 
+    }
+
+    public static void main(String[] arg0)
+    {
+        Rank test = new Rank();
+        test.show();
     }
 
 }
