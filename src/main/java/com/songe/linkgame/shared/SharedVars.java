@@ -40,11 +40,13 @@ public class SharedVars {
     public static final int IMAGES_SUM = 20;
 
     public static final int BACKGROUND_NUM = 67;
-    public static final int MENU_BACKGROUND_NUM = 67;
+    public static final int MENU_BACKGROUND_NUM = 52;
     public static final int SMALL_BACKGROUND_NUM = 66;
 
     public static final int START_IMAGE_RUN = 43;
     public static final int MENU_START_BUTTON_RUN = 53;
+    public static final int MENU_RANK_BUTTON_RUN = 55;
+    public static final int MENU_ABOUT_BUTTON_RUN = 57;
     public static final int MENU_MODE_BUTTON_RUN = 54;
     public static final int MENU_SORT_IMAGE_RUN = 55;
 //    public static final int START_IMAGE_RUN = 43;

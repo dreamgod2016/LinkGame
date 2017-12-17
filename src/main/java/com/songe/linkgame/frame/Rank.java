@@ -62,7 +62,7 @@ public class Rank
             setModal(true);
             setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             setTitle("松鹅的连连看排行榜");
-            
+
 
             //设置位置。
             Toolkit kit = Toolkit.getDefaultToolkit();

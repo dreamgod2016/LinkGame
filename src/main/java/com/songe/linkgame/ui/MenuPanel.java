@@ -8,6 +8,7 @@ import java.awt.event.MouseMotionListener;
 
 
 import com.songe.linkgame.frame.MenuFrame;
+import com.songe.linkgame.frame.Rank;
 import com.songe.linkgame.frame.SingleGameFrame;
 import com.songe.linkgame.shared.SharedVars;
 import com.songe.linkgame.utils.*;
@@ -17,15 +18,16 @@ import static com.songe.linkgame.shared.SharedVars.*;
 public class MenuPanel extends JPanel implements MouseListener,MouseMotionListener{
 
     private Image start;
+    private Image rank;
     private Image about;
     //接下来是很魔幻的定位。
     private int firstX = 260;
     private int firstY = 200;
-    private int space = 45;
-    private int space_1 = 10;
+    private int space = 20;
     private int item_width = 200;
     private int item_height = 50;
 
+    private Rank rankDialog;
 
     public MenuPanel()
     {
@@ -41,6 +43,8 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
         //初始化各个按钮的图片
         //图片的序号再说吧233
         start = ImagesFactory.getImage(MENU_START_BUTTON_RUN);
+        rank = ImagesFactory.getImage(MENU_RANK_BUTTON_RUN);
+        about = ImagesFactory.getImage(MENU_ABOUT_BUTTON_RUN);
 
     }
 
@@ -68,6 +72,12 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
                 }
                 SingleGameFrame.open();
                 TimePanel.initTime();
+                break;
+            case 2:
+                rankDialog.getInstance().show();
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(this,"By:松鹅\nGithub:https://github.com/dreamgod2016\n");
                 break;
         }
 
@@ -111,6 +121,9 @@ public class MenuPanel extends JPanel implements MouseListener,MouseMotionListen
         g.drawImage(ImagesFactory.getImage(MENU_BACKGROUND_NUM), 0, 0, 750, 500, null);
         g.drawImage(start, firstX, firstY, item_width, item_height, null);
         //接下来要画多少hh
+        g.drawImage(rank, firstX, firstY+item_height + space, item_width, item_height, null);
+        g.drawImage(about, firstX, firstY+item_height*2 + space * 2, item_width, item_height, null);
+
     }
 
     private int getIndex(MouseEvent e)

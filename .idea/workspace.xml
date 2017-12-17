@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="106277cb-e019-485a-a9b4-87635921f8b7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/Rank.java" afterPath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/Rank.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/MySQL.java" afterPath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/MySQL.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java" afterPath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java" afterPath="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,27 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="DrawArea.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/DrawArea.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1803#1804#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1881#1882#0" expanded="true" />
-                <element signature="e#1916#1917#0" expanded="true" />
-                <element signature="e#1949#1950#0" expanded="true" />
-                <element signature="e#1998#1999#0" expanded="true" />
-                <element signature="e#2035#2036#0" expanded="true" />
-                <element signature="e#4601#4602#0" expanded="true" />
-                <element signature="e#4644#4645#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TimePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/TimePanel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,25 +26,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleGameFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/SingleGameFrame.java">
+      <file leaf-file-name="MenuPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1216">
-              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-3795">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SharedVars.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SharedVars.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="38">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,7 +75,7 @@
       <file leaf-file-name="ControlPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/ControlPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6688">
+            <state relative-caret-position="3607">
               <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -123,14 +99,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rank.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/Rank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+            <state relative-caret-position="-193">
+              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,6 +152,8 @@
       <find>paint</find>
       <find>showtip</find>
       <find>insert</find>
+      <find>me</find>
+      <find>start</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,17 +172,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/Mode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/TimePanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/ImagesFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/DrawHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/SingleGameFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/ShowHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/Checker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/DrawArea.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/ControlPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/MySQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/Rank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java" />
       </list>
     </option>
   </component>
@@ -204,7 +192,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="200" />
     <option name="y" value="13" />
     <option name="width" value="1400" />
@@ -339,7 +327,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Rank">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -385,7 +373,7 @@
       <module name="LinkGame" />
       <envs />
     </configuration>
-    <configuration name="Rank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Rank" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.songe.linkgame.frame.*" />
@@ -484,10 +472,9 @@
       <item index="2" class="java.lang.String" itemvalue="Application.Rank" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Rank" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
         <item index="1" class="java.lang.String" itemvalue="Application.MySQL" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -522,15 +509,15 @@
       <workItem from="1513259941832" duration="2110000" />
       <workItem from="1513321721828" duration="6702000" />
       <workItem from="1513329750231" duration="388000" />
-      <workItem from="1513486139169" duration="5853000" />
+      <workItem from="1513486139169" duration="8550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134996000" />
+    <option name="totallyTimeSpent" value="137693000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -542,7 +529,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23367697" sideWeight="0.34947917" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23367697" sideWeight="0.65052086" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23367697" sideWeight="0.65052086" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2508591" sideWeight="0.48541668" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -637,6 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -705,6 +693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -776,6 +765,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,6 +837,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,16 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/MenuFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -954,13 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3458">
-          <caret line="105" column="20" lean-forward="false" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1006,41 +980,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/SingleGameFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/utils/DrawHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/ControlPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6688">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,13 +1009,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/SingleGameFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/frame/Rank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        <state relative-caret-position="-193">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/ControlPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3607">
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/ui/MenuPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3795">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/songe/linkgame/shared/SharedVars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
