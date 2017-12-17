@@ -48,7 +48,7 @@ public class MySQL {
             stmt = conn.createStatement();
             int numberRow = 0;
             String count,sql;
-            count = "select count(*) from dataTable";
+            count = "select count(*) from rank";
             ResultSet countRs = stmt.executeQuery(count);
             while (countRs.next())
             {
@@ -85,7 +85,7 @@ public class MySQL {
             stmt = conn.createStatement();
             String sql;
             //这种SQL拼接的很危险啊。。。
-            sql = String.format("INSERT INTO scores VALUES (0, %S, %S);","\'"+name+"\'","\'"+score+"\'");
+            sql = String.format("INSERT INTO rank VALUES (0, %S, %S);","\'"+name+"\'","\'"+score+"\'");
             stmt.executeUpdate(sql);
             return true;
         }catch (SQLException sqlError)
@@ -154,6 +154,19 @@ public class MySQL {
         }
 
         return strResult;
+    }
+
+    //用来测试的函数。
+    public static void main(String[] arg0)
+    {
+        String[][] result;
+        MySQL getResult = new MySQL();
+        getResult.connectDataBase();
+        result = getResult.getAllItem();
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(result[i][0]+result[i][1]+result[i][2]+"\n");
+        }
+        getResult.closeDataBase();
     }
 
 }
