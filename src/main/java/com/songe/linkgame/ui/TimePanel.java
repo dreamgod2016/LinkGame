@@ -71,7 +71,7 @@ public class TimePanel extends JPanel
         g2d.drawImage(lifeSpare, 100, 10, life_length, 18, null);
         g2d.drawImage(lifeUse, 98 + SharedVars.time, 13, life_length - SharedVars.time - 1, 14, null);
         g2d.drawImage(score_Image, 150 + life_length, 4, 100, 30, null);
-        g2d.setColor(Color.BLUE);
+        g2d.setColor(Color.WHITE);
         g2d.drawString(SharedVars.score + "", 250 + life_length, 25);
     }
     public static void initTime() {

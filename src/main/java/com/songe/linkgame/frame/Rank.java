@@ -43,6 +43,11 @@ public class Rank
         RankDialog rankDialog = new RankDialog();
         rankDialog.showTable();
     }
+    public boolean insertItem(String name, int score)
+    {
+        RankDialog rankDialog = new RankDialog();
+        return rankDialog.insertItem(name,score);
+    }
 
     class RankDialog extends JDialog
     {

@@ -55,14 +55,15 @@ public class MySQL {
             {
                 numberRow = countRs.getInt("count(*)");
             }
-            sql = "SELECT id, name, score FROM rank ORDER BY score";
+            sql = "SELECT id, name, score FROM rank ORDER BY -score";
             ResultSet rs = stmt.executeQuery(sql);
             getResult = new String[numberRow][3];
             int rank = 0;
             // 展开结果集数据库
             while(rs.next()){
                 // 通过字段检索
-                getResult[rank][0]= Integer.toString( rs.getInt("id"));
+//                getResult[rank][0]= Integer.toString( rs.getInt("id"));
+                getResult[rank][0] = rank+1;
                 getResult[rank][1] = rs.getString("name");
                 getResult[rank][2]= Integer.toString(rs.getInt("score"));
                 rank += 1;

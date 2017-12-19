@@ -1,6 +1,7 @@
 package com.songe.linkgame.ui;
 
 import com.songe.linkgame.frame.MenuFrame;
+import com.songe.linkgame.frame.Rank;
 import com.songe.linkgame.frame.SingleGameFrame;
 import com.songe.linkgame.shared.SharedVars;
 import com.songe.linkgame.utils.Checker;
@@ -222,6 +223,7 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
         private int i2;
         private int j1;
         private int j2;
+        private Rank rankDialog;
         public RePaintThread(){}
         public RePaintThread(boolean isBomb, int i1, int j1, int i2, int j2) {
             this.isBomb = isBomb;
@@ -290,8 +292,14 @@ public class DrawArea extends JPanel implements MouseMotionListener,MouseListene
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                //这里还有一个排行的模块没写。
-//                Ranking.getInstance().store(getLevel(), SharedVar.score);
+
+                String name = JOptionPane.showInputDialog("What's your name?");
+                if (name == null|| "".equals(name.trim()))
+                    name = "No NAME";
+                //插入进去
+                rankDialog.getInstance().insertItem(name, SharedVars.score);
+
+                //这里还有一个排行的模块没写，已经写了。
                 int state = JOptionPane.showConfirmDialog(null, "恭喜你取得胜利，本次得分为" + SharedVars.score
                         + "\n          开始新游戏？", "胜利", JOptionPane.OK_CANCEL_OPTION);
                 if (state == JOptionPane.OK_OPTION)
